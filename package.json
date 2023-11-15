@@ -1,0 +1,17 @@
+{
+  "name": "proy-3",
+  "version": "0.1.0",
+  "description": "Base Proyecto Dashboard",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dashboard",
+    "API",
+    "chartjs"
+  ],
+  "author": "PM",
+  "license": "ISC"
+}
