@@ -1,5 +1,6 @@
-import{crearGrafico} from "./grafico.js"
+import{crearGraficoDona} from "./grafico.js"
 import {crearTarjeta} from "./tarjeta.js"
+import { crearGraficoBarra} from "./grafico.js"
 
  
 const formulario = document.getElementById('formulario')
@@ -19,8 +20,9 @@ const valorInputDeTexto = inputDeTexto.value
 const respuesta = await fetch(`${urlAPI}${valorInputDeTexto}?api_key=${apiKey}`)
 const respuestaEnJson = await respuesta.json()
 
-const values = [respuestaEnJson.vote_average, 10-respuestaEnJson.vote_average]
-const names = "Score"
+const values = [respuestaEnJson.vote_average, 10 - respuestaEnJson.vote_average];
+const names = ["Score", ]
+
 //const values1 = respuestaEnJson.stats.map((elemento) =>{
 //    return elemento.base_stat
 //})
@@ -28,10 +30,13 @@ const names = "Score"
 //    return elemento.stat.name"
 //})
 
+const budgetBar = [respuestaEnJson.budget];
+const revenueBar = [respuestaEnJson.revenue];
 
 console.log(respuestaEnJson)
 crearTarjeta(respuestaEnJson)
-crearGrafico(values, names)
+crearGraficoDona(values, names)
+crearGraficoBarra(budgetBar,revenueBar)
 }
 
 formulario.addEventListener("submit", myFunction)

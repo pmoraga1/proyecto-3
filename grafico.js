@@ -1,16 +1,19 @@
 const ctx = document.getElementById('myChart')
-let grafico;
+const ctxBar = document.getElementById('myBarChart')
 
-export const crearGrafico = (datos,etiquetas)=>{
-    if (grafico){
-        grafico.destroy()
+let graficoDona;
+let graficoBarra;
+
+export const crearGraficoDona = (datos,etiquetas)=>{
+    if (graficoDona){
+        graficoDona.destroy()
     }
-        grafico = new Chart(ctx,{
-            type: 'pie',
+        graficoDona = new Chart(ctx,{
+            type: 'doughnut',
             data: {
                 labels: etiquetas, 
               datasets: [{
-                label: 'My First Dataset',
+                label: 'Score',
                 data: datos,
                 backgroundColor: [
                   'rgb(255, 99, 132)',
@@ -23,3 +26,28 @@ export const crearGrafico = (datos,etiquetas)=>{
         })
     
     }
+
+  export const crearGraficoBarra = (budget, revenue)=>{
+      if (graficoBarra){
+          graficoBarra.destroy()
+      }
+          graficoBarra = new Chart(ctxBar,{
+              type: 'bar',
+              data: {
+                  labels: ["Budget", "Revenue"],
+                datasets: [{
+                  label: 'USD',
+                  data: [budget, revenue],
+                  borderWidth: 1,
+                }]
+              },
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+            });
+      
+      }
