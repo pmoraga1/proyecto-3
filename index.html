@@ -16,24 +16,27 @@
 
     <form id="formulario" class="api_form">
         <input type="text" id="inputDeTexto" placeholder="Ingrese nombre"></input>
-        <button type="submit" id="searchButton">Buscar</button>
+        <button type="submit" id="searchButton" class="button">Buscar</button>
 
     </form>
 
     <main class="container">
         <section>
-            <div id="apiCard"></div>
+            <div id="apiCard" class="tarjeta"></div>
         </section>
 
+        <section class="graficos"> 
         <div>
-            <canvas id="myChart"></canvas>
+            <canvas id="myChart" class="grafico_dona"></canvas>
         </div>
           
         <div>
-            <canvas id="myBarChart"></canvas>
+            <canvas id="myBarChart" class="grafico_barra"></canvas>
         </div>
-    </main>
 
+       
+    </main>
+        </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js" type="module"></script>
 </body>

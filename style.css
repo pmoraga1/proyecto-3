@@ -4,18 +4,34 @@
     --primary-main: #00577B;
     --primary-dark: #152F4A;
     --primary-light: #A9CFDB;
-    --secondary-main:#EA7E46;
+    --secondary-main:#e7dcd6;
     --secondary-dark: #00b189;
     --secondary-light: #F1B351;
     
     }
 
     *{
-        margin: 20;
-        padding: 20;
+        margin: 0;
+        padding: 0;
         font-family: 'Poppins', sans-serif;
     }
 
 .api_form{
-    background-color: #152F4A;
+    background-color: var(--secondary-main);
+    padding: 20px;
+   
 }
+
+.button{
+    padding: 5px 15px;
+    border: none;
+    border-radius: 40px;
+    font-weight: 700;
+}
+
+
+.container{
+    background-color: var(--secondary-main);
+   
+}
+

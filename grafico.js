@@ -16,8 +16,8 @@ export const crearGraficoDona = (datos,etiquetas)=>{
                 label: 'Score',
                 data: datos,
                 backgroundColor: [
-                  'rgb(255, 99, 132)',
-                  'rgb(54, 162, 235)',
+                  '#00577B',
+                  '#152F4A',
                   'rgb(255, 205, 86)'
                 ],
                 hoverOffset: 4
