@@ -1,4 +1,6 @@
 const apiCard = document.getElementById('apiCard')
+const imgCard = document.getElementById('imageCard')
+
 
 export const crearTarjeta = (datos) => {
     apiCard.innerHTML = '' ;

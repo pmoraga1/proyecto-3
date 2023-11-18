@@ -4,7 +4,7 @@
     --primary-main: #00577B;
     --primary-dark: #152F4A;
     --primary-light: #A9CFDB;
-    --secondary-main:#e7dcd6;
+    --secondary-main:#ffffff;
     --secondary-dark: #00b189;
     --secondary-light: #F1B351;
     
@@ -14,8 +14,64 @@
         margin: 0;
         padding: 0;
         font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
     }
 
+
+    main.container {
+        background-color: var(--primary-dark);
+        min-height: 50vh;
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 32px 16px;
+        max-width: 100%;
+        width: 100%;
+        padding: 16px 100px;
+      }
+      
+      div.movie {
+        display: grid;
+        grid-template-columns: 100px auto;
+        grid-gap: 16px;
+
+      }
+
+      div.movie img {
+        width: 100px;
+      }
+
+      div.movie div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      div.movie h2 {
+        font-size: 20px;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+      }
+      div.movie p {
+        font-size: 12px;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+        max-height: 80px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+
+      body{
+        overflow-x:hidden;
+        background-color: var(--primary-dark);
+        color: var(--secondary-main);
+        max-width: 100vw;
+      }
+    
 .api_form{
     background-color: var(--secondary-main);
     padding: 20px;
@@ -35,3 +91,31 @@
    
 }
 
+
+footer{
+    background-color: #0d253f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ footer img{
+    height:2cap;
+    
+ }
+
+ footer ul{
+    display:flex;
+    gap:32px;
+    list-style: none;
+    margin:0;
+    color:#ffffff;
+ }
+
+ footer li a{
+    color:#ffffff;
+ }
+
+ footer li a:hover{
+    color: var(--primary-light);
+ }
