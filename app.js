@@ -1,20 +1,17 @@
-import{crearGraficoDona} from "./grafico.js"
-import {crearTarjeta} from "./tarjeta.js"
-import { crearGraficoBarra} from "./grafico.js"
 
- 
 const formulario = document.getElementById('formulario')
 const inputDeTexto = document.getElementById('inputDeTexto')
 const movieGrid = document.getElementById('movieGrid')
 const imageURL ="https://image.tmdb.org/t/p/w500"
-const urlAPI2 = "https://api.themoviedb.org/3/movie/"
+const urlAPI2 = "https://api.themoviedb.org/3/movie/" //API para buscar por ID
 
 const apiKey='b0836695b4faeba99adf577723059d78'
 
+const urlAPI = `https://api.themoviedb.org/3/search/movie?query=` //API para buscar por película
 
-const urlAPI = `https://api.themoviedb.org/3/search/movie?query=`
+let movieList = [] // para el buscador
+let movie = {} // para el dashbaord
 
-let movieList = []
 
 const renderMovies = () => {
     movieGrid.innerHTML ="";
@@ -39,7 +36,7 @@ const renderMovies = () => {
     const movieDetails = document.createElement("button");
     movieDetails.innerText = "Details";
     movieDetails.addEventListener("click", () => {
-      searchMovie(movie.id);
+      openMovie(movie.id);
     });
 
     movieContainer.appendChild(movieDetails);
@@ -63,24 +60,11 @@ const myFunction = async (evento) => {
         movieList= [];
     }
 
-    const values = [respuestaEnJson.vote_average, 10 - respuestaEnJson.vote_average];
-    const names = ["Score", ]
-
-    const budgetBar = [respuestaEnJson.budget];
-    const revenueBar = [respuestaEnJson.revenue];
-
-    console.log(respuestaEnJson)
-    crearTarjeta(respuestaEnJson)
-    crearGraficoDona(values, names)
-    crearGraficoBarra(budgetBar,revenueBar)
+}
+const openMovie = async (movieID) => { 
+    window.location.href=`./dashboard.html?id=${movieID}`
 }
 
-const searchMovie = async (movieID) => { 
-    const respuesta = await fetch(`${urlAPI2}${movieID}?api_key=${apiKey}`)
-    const respuestaEnJson = await respuesta.json()
-    window.location.href='dashboard.html'
-    console.log(respuestaEnJson)
-}
 
 
 formulario.addEventListener("submit", myFunction)

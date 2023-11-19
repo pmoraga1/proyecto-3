@@ -2,10 +2,10 @@
 
 :root{
     --primary-main: #00577B;
-    --primary-dark: #152F4A;
-    --primary-light: #A9CFDB;
+    --primary-dark: #0d253f;
+    --primary-light: #01b4e4;
     --secondary-main:#ffffff;
-    --secondary-dark: #00b189;
+    --secondary-dark: #90cea1;
     --secondary-light: #F1B351;
     
     }
@@ -20,14 +20,15 @@
 
     main.container {
         background-color: var(--primary-dark);
-        min-height: 50vh;
-        margin-top: 32px;
         display: grid;
+        grid-gap: 32px;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 32px 16px;
+        margin-top: 32px;
         max-width: 100%;
-        width: 100%;
+        min-height: 50vh;
         padding: 16px 100px;
+        margin-bottom: 100px;
+        width: 100%;
       }
       
       div.movie {
@@ -90,6 +91,56 @@
     background-color: var(--secondary-main);
    
 }
+
+.tarjeta{
+    background-color: red;
+    grid-column:span 2;
+    display:flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-right: 40px
+}
+
+.tarjeta div{
+    display:flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: 18px;
+}
+
+.graficos{
+    background-color: green;
+    grid-column: span 1;
+    height: 100%;
+    align-items: center;
+
+
+}
+
+.grafico_dona{
+    background-color: #00577B;
+    max-width: 300px;
+    max-height: 300px;
+
+}
+
+
+
+.tarjeta ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+.tarjeta ul li {
+    background-color: var(--secondary-dark);
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
 
 
 footer{

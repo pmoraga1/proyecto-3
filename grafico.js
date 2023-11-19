@@ -16,8 +16,8 @@ export const crearGraficoDona = (datos,etiquetas)=>{
                 label: 'Score',
                 data: datos,
                 backgroundColor: [
-                  '#00577B',
-                  '#152F4A',
+                  '#0d253f',
+                  '#01b4e4',
                   'rgb(255, 205, 86)'
                 ],
                 hoverOffset: 4
@@ -38,6 +38,7 @@ export const crearGraficoDona = (datos,etiquetas)=>{
                 datasets: [{
                   label: 'USD',
                   data: [budget, revenue],
+                  
                   borderWidth: 1,
                 }]
               },
@@ -46,6 +47,7 @@ export const crearGraficoDona = (datos,etiquetas)=>{
                   y: {
                     beginAtZero: true
                   }
+                  
                 }
               }
             });
