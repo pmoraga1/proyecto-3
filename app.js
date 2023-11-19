@@ -34,7 +34,7 @@ const renderMovies = () => {
     movieContainer.appendChild(movieOverview);
 
     const movieDetails = document.createElement("button");
-    movieDetails.innerText = "Details";
+    movieDetails.innerText = "Ver más";
     movieDetails.addEventListener("click", () => {
       openMovie(movie.id);
     });
@@ -68,4 +68,19 @@ const openMovie = async (movieID) => {
 
 
 formulario.addEventListener("submit", myFunction)
-renderMovies()
+
+async function defaultMovies() {
+    const result = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?language=es-CL&api_key=${apiKey}`
+    );
+    const resultJson = await result.json();
+  
+    if (resultJson.results) {
+      movieList = resultJson.results;
+      renderMovies();
+    } else {
+      movies = [];
+    }
+  }
+
+  defaultMovies()

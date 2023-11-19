@@ -6,7 +6,7 @@
     --primary-light: #01b4e4;
     --secondary-main:#ffffff;
     --secondary-dark: #90cea1;
-    --secondary-light: #F1B351;
+    --secondary-light: rgb(132, 216, 241);
     
     }
 
@@ -93,12 +93,24 @@
 }
 
 .tarjeta{
-    background-color: red;
+
     grid-column:span 2;
     display:flex;
     align-items: flex-start;
     gap: 40px;
     margin-right: 40px
+}
+
+.tarjeta h3{
+    font-size: 28px;
+}
+
+.tarjeta p{
+    font-size: 16px;
+}
+
+.tarjeta img{
+    width:300px;
 }
 
 .tarjeta div{
@@ -109,19 +121,29 @@
 }
 
 .graficos{
-    background-color: green;
     grid-column: span 1;
     height: 100%;
     align-items: center;
+    display:flex;
+    flex-direction: column;
+    gap: 70px;
+    justify-content: center;
+
 
 
 }
 
 .grafico_dona{
-    background-color: #00577B;
     max-width: 300px;
     max-height: 300px;
+    margin-left: 70px;
+    
+}
 
+.grafico_barra{
+    margin-top: 40px;
+    max-width: 400px;
+    max-height: 300px;
 }
 
 
@@ -170,3 +192,4 @@ footer{
  footer li a:hover{
     color: var(--primary-light);
  }
+

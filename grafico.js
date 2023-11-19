@@ -13,11 +13,11 @@ export const crearGraficoDona = (datos,etiquetas)=>{
             data: {
                 labels: etiquetas, 
               datasets: [{
-                label: 'Score',
+                label: 'Votación promedio',
                 data: datos,
                 backgroundColor: [
+                  'rgb(132, 216, 241)',
                   '#0d253f',
-                  '#01b4e4',
                   'rgb(255, 205, 86)'
                 ],
                 hoverOffset: 4
@@ -38,7 +38,8 @@ export const crearGraficoDona = (datos,etiquetas)=>{
                 datasets: [{
                   label: 'USD',
                   data: [budget, revenue],
-                  
+                  backgroundColor: "#90cea1",
+
                   borderWidth: 1,
                 }]
               },
@@ -48,8 +49,15 @@ export const crearGraficoDona = (datos,etiquetas)=>{
                     beginAtZero: true
                   }
                   
+                },
+                plugins: {
+                  legend: {
+                      labels: {
+                          // Cambiar el color del texto de la leyenda
+                      }
                 }
-              }
-            });
+              },
+              indexAxis: 'y',
+            }});
       
       }

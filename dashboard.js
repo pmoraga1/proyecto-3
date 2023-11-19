@@ -18,7 +18,7 @@ function getIdFromUrl() {
 
 async function fetchMovie() {
   const movieId = getIdFromUrl();
-  const respuesta = await fetch(`${movieUrl}${movieId}?api_key=${apiKey}`);
+  const respuesta = await fetch(`${movieUrl}${movieId}?language=es-CL&api_key=${apiKey}&append_to_response=videos,images`);
   const respuestaEnJson = await respuesta.json();
   movie = respuestaEnJson;
   renderMovie();
