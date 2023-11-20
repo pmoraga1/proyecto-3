@@ -29,7 +29,7 @@ fetchMovie();
 function renderMovie() {
     
     const values = [movie.vote_average, 10 - movie.vote_average];
-    const names = ["Score", ]
+    const names = ['Puntación']
 
     const budgetBar = [movie.budget];
     const revenueBar = [movie.revenue];

@@ -1,3 +1,6 @@
+
+import './node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js';
+
 const ctx = document.getElementById('myChart')
 const ctxBar = document.getElementById('myBarChart')
 
@@ -13,17 +16,53 @@ export const crearGraficoDona = (datos,etiquetas)=>{
             data: {
                 labels: etiquetas, 
               datasets: [{
-                label: 'Votación promedio',
                 data: datos,
                 backgroundColor: [
                   'rgb(132, 216, 241)',
-                  '#0d253f',
-                  'rgb(255, 205, 86)'
+                  'rgba(132, 216, 241, 0.2)',
                 ],
+                borderColor: ['rgb(132, 216, 241)',
+                'rgba(0,0,0,0)'],
                 hoverOffset: 4
               }]
+            }, 
+            options: {
+              plugins: {
+                legend: {
+                  display: false,
+                },
+                title: {
+                  display: true,
+                  text: 'Votación Promedio',
+                  color: 'white'
+                },
+                tooltip:{
+                  callbacks:{
+                    label: (context) => {
+                     if (context.dataIndex === 0) {
+
+                      return `${context.chart.data.labels[context.dataIndex]}: ${context.chart.data.datasets[0].data[context.dataIndex]}`;
+                    } else{
+                      return '';
+                    }
+                  },
+                },
+
+                datalabels: {
+                  color: '#fff',
+                  anchor: 'center',
+                  align: 'center',
+                  offset: -10,
+                  font: {
+                    weight: 'bold',
+                    size: 20},
+                    formatter: (value, ctx) => {
+                      return ctx.chart.data.labels[ctx.dataIndex];
+                  },
+                  color: '#fff'
             }
-        })
+            
+}}}})
     
     }
 
@@ -39,25 +78,51 @@ export const crearGraficoDona = (datos,etiquetas)=>{
                   label: 'USD',
                   data: [budget, revenue],
                   backgroundColor: "#90cea1",
-
+                  fontColor: '#ffffff',
                   borderWidth: 1,
                 }]
               },
               options: {
                 scales: {
                   y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks:{
+                      color:'white',
+                    }
+                  },
+                  x: {
+                    ticks:{
+                      color:'white',
+                    }
                   }
                   
                 },
                 plugins: {
                   legend: {
+                      title: {
+                        display: true,
+                        text: 'Presupuesto vs Ganancias',
+                        color: 'white',
+                      },
                       labels: {
-                          // Cambiar el color del texto de la leyenda
+                        color:'#ffffff',
                       }
-                }
+
+                },
+                tooltip:{
+                  enabled:false,
+                },
               },
               indexAxis: 'y',
+              elements: {
+                bar:{
+                  borderWidth:2,
+                }
+              },
+              responsive: true,
+              
+             
+      
             }});
       
       }

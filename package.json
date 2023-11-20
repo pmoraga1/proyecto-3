@@ -13,5 +13,8 @@
     "chartjs"
   ],
   "author": "PM",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "chartjs-plugin-datalabels": "^2.2.0"
+  }
 }

@@ -6,7 +6,7 @@
     --primary-light: #01b4e4;
     --secondary-main:#ffffff;
     --secondary-dark: #90cea1;
-    --secondary-light: rgb(132, 216, 241);
+    --secondary-light: #152F4A;
     
     }
 
@@ -17,6 +17,17 @@
         box-sizing: border-box;
     }
 
+    body{
+      overflow-x:hidden;
+      background-color: var(--primary-dark);
+      color: var(--secondary-main);
+      max-width: 100vw;
+      display:grid;
+    }
+
+    .header{
+      background-color: var(--secondary-light);
+    }
 
     main.container {
         background-color: var(--primary-dark);
@@ -29,12 +40,13 @@
         padding: 16px 100px;
         margin-bottom: 100px;
         width: 100%;
+
       }
       
       div.movie {
         display: grid;
         grid-template-columns: 100px auto;
-        grid-gap: 16px;
+        grid-gap: 20px;
 
       }
 
@@ -53,6 +65,7 @@
         font-weight: 300;
         margin: 0;
         padding: 0;
+
       }
       div.movie p {
         font-size: 12px;
@@ -66,16 +79,10 @@
         -webkit-box-orient: vertical;
       }
 
-      body{
-        overflow-x:hidden;
-        background-color: var(--primary-dark);
-        color: var(--secondary-main);
-        max-width: 100vw;
-      }
     
 .api_form{
-    background-color: var(--secondary-main);
-    padding: 20px;
+ 
+    padding: 15px;
    
 }
 
@@ -89,6 +96,7 @@
 
 .container{
     background-color: var(--secondary-main);
+    
    
 }
 
@@ -103,10 +111,13 @@
 
 .tarjeta h3{
     font-size: 28px;
+    margin-bottom: 8px;
+
 }
 
 .tarjeta p{
     font-size: 16px;
+    margin-top: 8px;
 }
 
 .tarjeta img{
@@ -114,29 +125,26 @@
 }
 
 .tarjeta div{
-    display:flex;
-    flex-direction: column;
+    display:grid;
+    flex-direction: row;
     gap: 24px;
     font-size: 18px;
+    grid-template-rows: 1/2fr 1fr 1/2fr 2fr;
 }
 
 .graficos{
     grid-column: span 1;
-    height: 100%;
     align-items: center;
-    display:flex;
-    flex-direction: column;
-    gap: 70px;
+    display:grid;
+    grid-template-rows: 1fr 1fr;
     justify-content: center;
-
-
-
 }
 
 .grafico_dona{
     max-width: 300px;
     max-height: 300px;
     margin-left: 70px;
+    color:#ffffff !important;
     
 }
 
@@ -147,6 +155,9 @@
 }
 
 
+.seccion-graficos{
+  align-items: center;
+}
 
 .tarjeta ul {
     list-style: none;
@@ -166,10 +177,11 @@
 
 
 footer{
-    background-color: #0d253f;
+    background-color: var(--secondary-light);
     display: flex;
     align-items: center;
     justify-content: center;
+    height:50px;
  }
 
  footer img{
@@ -193,3 +205,26 @@ footer{
     color: var(--primary-light);
  }
 
+ @media only screen and (max-width: 1320px){
+
+  .tarjeta{
+    flex-wrap: wrap;
+  }
+
+
+.seccion-graficos{
+  flex-wrap: wrap;
+}
+main.container{
+  grid-template-columns: repeat(1fr, 1fr);
+
+}
+}
+
+@media only screen and (max-width: 990px){
+  
+  main.container{
+    grid-template-columns: 1fr;
+  }
+ 
+}
