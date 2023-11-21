@@ -1,5 +1,5 @@
 
-import './node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js';
+// import './node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js';
 
 const ctx = document.getElementById('myChart')
 const ctxBar = document.getElementById('myBarChart')

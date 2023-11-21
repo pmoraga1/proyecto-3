@@ -1,4 +1,3 @@
-
 const formulario = document.getElementById('formulario')
 const inputDeTexto = document.getElementById('inputDeTexto')
 const movieGrid = document.getElementById('movieGrid')

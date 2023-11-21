@@ -38,7 +38,7 @@
         max-width: 100%;
         min-height: 50vh;
         padding: 16px 100px;
-        margin-bottom: 100px;
+        margin-bottom: 40px;
         width: 100%;
 
       }
@@ -106,7 +106,9 @@
     display:flex;
     align-items: flex-start;
     gap: 40px;
-    margin-right: 40px
+    margin-right: 40px;
+    
+
 }
 
 .tarjeta h3{
